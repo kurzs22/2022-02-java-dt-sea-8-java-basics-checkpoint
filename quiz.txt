@@ -1,65 +1,65 @@
 Q: What is the difference between the branch names "main" and "master"?
-A:
+A: "main" is the modern branch name and is now preferred over "master".
 
 Q: How do you checkout into the working tree of branch "main"?
-A:
+A: git checkout main
 
 Q: What is the command that allows you to temporarily store away your current, uncommited changes in order to restore them later?
-A:
+A: git stash
 
 Q: How do you list the commit history?
-A:
+A: git log --oneline
 
 Q: What is the difference between "git pull" and "git fetch"?
-A:
+A: "git pull" is the same as "git fetch" plus a "git merge"
 
 Q: What is the return type of the expression (true && false)?
-A:
+A: false
 
 Q: How can you write "i = i + 2" more concisely?
-A:
+A: i += 2
 
 Q: How do you split a string on each occurence of ","?
-A:
+A: String[] parts = myString.split(",");
 
 Q: How do you compare a String the proper way? How do you ignore the casing of the words?
-A:
+A: if (someString.compareToIgnoreCase(anotherString) < 0) { ... }
 
 Q: Name an implementation of the "List" interface. Is a list ordered, is it sorted?
-A:
+A: ArrayList is an implementation. Lists are ordered and usually not sorted.
 
 Q: Name an implementation of the "Set" interface. Is a list ordered, is it sorted?
-A:
+A: HashSet is an implementation. HashSet is not ordered and not sorted.
 
 Q: We have an array "humans", what is the correct way of retrieving it's size?
-A:
+A: humans.length
 
 Q: For a list "humans", we try to access it's size with "int size = humans.size;". Is that correct?
-A:
+A: No, it must be "int size = humans.size();"
 
 Q: How can we catch exceptions and prevent them from crashing our program?
-A:
+A: With try and catch commands
 
 Q: How can you quickly load all lines from a file "quiz.txt" using a class from "java.nio"?
-A:
+A: List<String> quiz = Files.readAllLines(new Path("quiz.txt"));
 
 Q: We have a class "Apple" that has an attribute "price" and also contains a "DEFAULT_PRICE" for all new apples. Which of them is static and why?
-A:
+A: "DEFAULT_PRICE" should be static becaus it is constant for all objects of that class.
 
 Q: What is the full declaration of the "main" method of a class?
-A:
+A: public static void main(String[] args)
 
 Q: What is an object?
-A:
+A: An instance of a class that was created with a constructor.
 
 Q: Which naming rule should you apply to the naming of methods?
-A:
+A: Names of methods should start with a lower case letter and are written in camel case.
 
 Q: Does java.util.Date only describe the date?
-A:
+A: It describes date and time.
 
 Q: How can you store the local time (no time zone info)?
-A:
+A: Date t = new Date();
 
 Q: Name at least one example of a generic interface from the standard library.
-A:
+A: e.g. "List<T>" is the generic interface for lists of any type T.
