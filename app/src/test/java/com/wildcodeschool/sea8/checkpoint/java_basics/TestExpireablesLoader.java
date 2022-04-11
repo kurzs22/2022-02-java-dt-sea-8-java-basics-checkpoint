@@ -15,7 +15,10 @@ public class TestExpireablesLoader {
         assertEquals(8, database.getList().size(), "There should be eight entries in the list.");
         boolean found = false;
         for (IExpireable expireable : database.getList()) {
-            found = expireable.expiryDate().equals(LocalDate.parse("2022-06-18"));
+            if (!found)
+                found = expireable.expiryDate().equals(LocalDate.parse("2022-06-18"));
+            else
+                break;
         }
         assertTrue(found, "The entry with the expiration date of 2022-06-18 should be loaded from file and therefore be in the list.");
     }

@@ -3,6 +3,7 @@ package com.wildcodeschool.sea8.checkpoint.java_basics;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.time.LocalDate;
 import java.util.List;
 
 public class ExpireablesLoader {
@@ -28,23 +29,21 @@ public class ExpireablesLoader {
             database = new ExpireablesDatabase<>();
 
             for (String line : lines) {
-                // TODO: split the line at the right symbol instead of ""
-                String[] lineEntries = line.split("");
+                // split the line at the right symbol instead of ""
+                String[] lineEntries = line.split(",");
 
                 if(lineEntries.length == 0) continue;
                 if(lineEntries[0].equalsIgnoreCase("Certificate")) {
-                    // TODO: load the certificate and add it to the database
+                    // load the certificate and add it to the database
                     // array lineEntries might look like this:
                     // ["Certificate", "SEA 8 Checkpoint", "WCS", "2022-06-18"]
-
-
+                    database.addItem(new Certificate(lineEntries[1], lineEntries[2], LocalDate.parse(lineEntries[3])));
 
                 } else if (lineEntries[0].equalsIgnoreCase("DairyProduct")) {
-                    // TODO: load the dairy product and add it to the database
+                    // load the dairy product and add it to the database
                     // array lineEntries might look like this:
                     // ["DairyProduct", "2022-03-15", "7"]
-
-
+                    database.addItem(new DairyProduct( LocalDate.parse(lineEntries[1]), Integer.parseInt(lineEntries[2]) ));
 
                 }
             }
