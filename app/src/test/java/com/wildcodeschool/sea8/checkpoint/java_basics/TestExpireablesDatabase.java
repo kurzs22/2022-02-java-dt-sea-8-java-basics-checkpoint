@@ -32,6 +32,7 @@ public class TestExpireablesDatabase {
         assertFalse(database.getList().contains(expiredItem), "Expired item should not be in the list after removing.");
 
         database.sortByExpirationDate(true);
-        assertEquals(fourDays, database.getLastEntry(), String.format("%s should be the last item in the list after sorting.", fourDays));
+        assertEquals(fourDays, database.getLastEntry(),
+                String.format("%s should be the last item in the list after sorting.", fourDays));
     }
 }
